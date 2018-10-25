@@ -19,7 +19,7 @@ describe('TextInput', () => {
   it('passes the handleChange prop to input element', () => {
     expect(wrapper.find('input').props().onChange).toBe(changeHandler)
   })
-  it('passes the value prop to input element', () => {
+  it('passes the label prop to the label element', () => {
     expect(wrapper.find('label').text()).toBe('City')
   })
 })
