@@ -1,5 +1,5 @@
-import { FETCH_FORECAST_LOADING, FETCH_FORECAST_ERROR } from './'
-import { fetchForecastLoading, fetchForecastError } from './'
+import { FETCH_FORECAST_LOADING, FETCH_FORECAST_ERROR, FETCH_FORECAST_SUCCESS } from './'
+import { fetchForecastLoading, fetchForecastError, fetchForecastSuccess } from './'
 
 describe('fetchForecastLoading', () => {
   describe('given no argument', () => {
@@ -46,5 +46,14 @@ describe('fetchForecastError', () => {
       expect(action.type).toBe(FETCH_FORECAST_ERROR)
       expect(action.payload).toBe(false)
     })
+  })
+})
+
+describe('fetchForecastSuccess', () => {
+  it('returns a FETCH_FORECAST_SUCCESS action containing the passed payload', () => {
+    const payload = []
+    const action = fetchForecastSuccess(payload)
+    expect(action.type).toBe(FETCH_FORECAST_SUCCESS)
+    expect(action.payload).toBe(payload)
   })
 })
