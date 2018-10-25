@@ -10,10 +10,17 @@ describe('fetchForecastLoading', () => {
     })
   })
   describe('given a boolean "true" argument', () => {
-    it('returns a FETCH_FORECAST_LOADING action with payload of boolean "false"', () => {
+    it('returns a FETCH_FORECAST_LOADING action with payload of boolean "true"', () => {
       const action = fetchForecastLoading(true)
       expect(action.type).toBe(FETCH_FORECAST_LOADING)
       expect(action.payload).toBe(true)
+    })
+  })
+  describe('given a boolean "false" argument', () => {
+    it('returns a FETCH_FORECAST_LOADING action with payload of boolean "false"', () => {
+      const action = fetchForecastLoading(false)
+      expect(action.type).toBe(FETCH_FORECAST_LOADING)
+      expect(action.payload).toBe(false)
     })
   })
 })
