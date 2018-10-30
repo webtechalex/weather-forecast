@@ -8,6 +8,10 @@ import App from './containers/App/App'
 import './styles/index.css'
 import forecast from './redux/reducers'
 
+if (process.env.NODE_ENV === 'production') {
+  require('dotenv').config()
+}
+
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
 const store = createStore(forecast, composeEnhancers(applyMiddleware(thunk)))
 

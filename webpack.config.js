@@ -1,3 +1,5 @@
+var Dotenv = require('dotenv-webpack');
+var DotenvConfig = new Dotenv()
 var HTMLWebpackPlugin = require('html-webpack-plugin')
 var HTMLWebpackPluginConfig = new HTMLWebpackPlugin({
   template: __dirname + '/src/index.html',
@@ -11,6 +13,7 @@ module.exports = {
     path: __dirname + '/dist',
     filename: 'bundle.js'
   },
+  mode: 'development',
   module: {
     rules: [
       {
@@ -30,5 +33,8 @@ module.exports = {
       }
     ]
   },
-  plugins: [HTMLWebpackPluginConfig]
+  plugins: [
+    HTMLWebpackPluginConfig,
+    DotenvConfig
+  ]
 }
