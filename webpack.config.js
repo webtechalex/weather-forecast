@@ -1,7 +1,7 @@
-var Dotenv = require('dotenv-webpack');
-var DotenvConfig = new Dotenv()
-var HTMLWebpackPlugin = require('html-webpack-plugin')
-var HTMLWebpackPluginConfig = new HTMLWebpackPlugin({
+const Dotenv = require('dotenv-webpack');
+const DotenvConfig = new Dotenv()
+const HTMLWebpackPlugin = require('html-webpack-plugin')
+const HTMLWebpackPluginConfig = new HTMLWebpackPlugin({
   template: __dirname + '/src/index.html',
   filename: 'index.html',
   inject: 'body'
