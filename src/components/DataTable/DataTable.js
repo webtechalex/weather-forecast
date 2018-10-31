@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 
 import DataRow from '../DataRow/DataRow'
 import filterForecastsByDate from '../../helpers/filterForecastsByDate'
