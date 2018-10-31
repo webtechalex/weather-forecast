@@ -1,4 +1,5 @@
 import React, { Component, Fragment } from 'react'
+import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 
 import { fetchForecast } from '../../redux/actions'
@@ -35,5 +36,13 @@ const mapStateToProps = state => ({
   isLoading: state.isLoading,
   hasError: state.hasError
 })
+
+ForecastDataContainer.propTypes = {
+  dates: PropTypes.array,
+  forecasts: PropTypes.array,
+  isLoading: PropTypes.bool.isRequired,
+  hasError: PropTypes.bool.isRequired,
+  fetchForecast: PropTypes.func.isRequired
+}
 
 export default connect(mapStateToProps, {fetchForecast})(ForecastDataContainer)

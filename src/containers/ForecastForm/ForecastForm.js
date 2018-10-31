@@ -1,4 +1,5 @@
 import React, { Component, Fragment } from 'react'
+import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 
 import TextInput from '../../common/TextInput/TextInput'
@@ -100,6 +101,11 @@ class ForecastForm extends Component {
       </Fragment>
     )
   }
+}
+
+ForecastForm.propTypes = {
+  fetchForecast: PropTypes.func.isRequired,
+  fetchForecastSuccess: PropTypes.func.isRequired
 }
 
 export default connect(undefined, {fetchForecast, fetchForecastSuccess})(ForecastForm)

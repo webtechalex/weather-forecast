@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 import getDayName from '../../helpers/getDayName'
 
@@ -13,5 +14,10 @@ const DataRow = ({ date, forecasts }) => (
     )}
   </tr>
 )
+
+DataRow.propTypes = {
+  date: PropTypes.string,
+  forecasts: PropTypes.array
+}
 
 export default DataRow

@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 import DataRow from '../DataRow/DataRow'
 import filterForecastsByDate from '../../helpers/filterForecastsByDate'
@@ -15,5 +16,9 @@ const DataTable = ({ dates, forecastData }) => {
   )
 }
 
+DataTable.propTypes = {
+  dates: PropTypes.array,
+  forecastData: PropTypes.array
+}
 
 export default DataTable
