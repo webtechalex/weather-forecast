@@ -22,9 +22,9 @@ class ForecastDataContainer extends Component {
     const { dates, forecasts, isLoading, hasError } = this.props
     return (
       <Fragment>
-        {hasError && <Error />}
-        {isLoading && <Loading />}
-        {forecasts && <DataTable dates={dates} forecastData={forecasts} />}
+        <Error hasError={hasError} />
+        <Loading isLoading={isLoading} />
+        <DataTable dates={dates} forecastData={forecasts} />
       </Fragment>
     )
   }

@@ -5,15 +5,18 @@ import DataRow from '../DataRow/DataRow'
 import filterForecastsByDate from '../../helpers/filterForecastsByDate'
 
 const DataTable = ({ dates, forecastData }) => {
-  return (
-    <table>
-      <tbody>
+  if (forecastData) {
+    return (
+      <table>
+        <tbody>
         {dates.map((date) =>
           <DataRow key={date} date={date} forecasts={filterForecastsByDate(date, forecastData)} />
         )}
-      </tbody>
-    </table>
-  )
+        </tbody>
+      </table>
+    )
+  }
+  return null
 }
 
 DataTable.propTypes = {

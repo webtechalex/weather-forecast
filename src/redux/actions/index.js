@@ -13,6 +13,7 @@ export const fetchForecastSuccess = (payload) => ({ type: FETCH_FORECAST_SUCCESS
 export const fetchForecast = (query) => dispatch => {
   dispatch(fetchForecastError())
   dispatch(fetchForecastLoading(true))
+  dispatch(fetchForecastSuccess(null))
   let forecastURL = 'http://api.openweathermap.org/data/2.5/forecast'
   let queryString = query
     ? `${forecastURL}?q=${query.replace(/\s/g, '')}&APPID=${process.env.API_KEY}`
@@ -23,6 +24,7 @@ export const fetchForecast = (query) => dispatch => {
       dispatch(fetchForecastSuccess(response.data))
     })
     .catch(error => {
+      dispatch(fetchForecastLoading())
       dispatch(fetchForecastError(true))
     })
 }
