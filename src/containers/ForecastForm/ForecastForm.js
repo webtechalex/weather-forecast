@@ -45,20 +45,22 @@ class ForecastForm extends Component {
   }
 
   handleSubmitCSVData = () => {
-    this.props.fetchForecastSuccess({
-      list: this.state.csvData.split(', ').map(dataPoint => {
-        const [ dt_txt, temp ] = dataPoint.split(',')
-        return {
-          dt_txt,
-          main: {
-            temp
+    if (this.state.csvData) {
+      this.props.fetchForecastSuccess({
+        list: this.state.csvData.split(', ').map(dataPoint => {
+          const [ dt_txt, temp ] = dataPoint.split(',')
+          return {
+            dt_txt,
+            main: {
+              temp
+            }
           }
-        }
+        })
       })
-    })
-    this.setState({
-      csvData: ''
-    })
+      this.setState({
+        csvData: ''
+      })
+    }
   }
 
   handleGetCityData = () => {
