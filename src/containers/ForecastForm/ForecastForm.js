@@ -16,33 +16,27 @@ class ForecastForm extends Component {
       city: '',
       dataSource: 'csv'
     }
-    this.handleChangeCSVData = this.handleChangeCSVData.bind(this)
-    this.handleSubmitCSVData = this.handleSubmitCSVData.bind(this)
-    this.handleChangeCityData = this.handleChangeCityData.bind(this)
-    this.handleGetCityData = this.handleGetCityData.bind(this)
-    this.handleChangeDataSource = this.handleChangeDataSource.bind(this)
-    this.handleGetWeatherData = this.handleGetWeatherData.bind(this)
   }
 
-  handleChangeDataSource(event) {
+  handleChangeDataSource = (event) => {
     this.setState({
       dataSource: event.target.value
     })
   }
 
-  handleChangeCSVData(event) {
+  handleChangeCSVData = (event) => {
     this.setState({
       csvData: event.target.value
     })
   }
 
-  handleChangeCityData(event) {
+  handleChangeCityData = (event) => {
     this.setState({
       city: event.target.value
     })
   }
 
-  handleGetWeatherData() {
+  handleGetWeatherData = () => {
     if (this.state.dataSource === 'csv') {
       this.handleSubmitCSVData()
     } else {
@@ -50,7 +44,7 @@ class ForecastForm extends Component {
     }
   }
 
-  handleSubmitCSVData() {
+  handleSubmitCSVData = () => {
     this.props.fetchForecastSuccess({
       list: this.state.csvData.split(', ').map(dataPoint => {
         const [ dt_txt, temp ] = dataPoint.split(',')
@@ -67,7 +61,7 @@ class ForecastForm extends Component {
     })
   }
 
-  handleGetCityData() {
+  handleGetCityData = () => {
     this.props.fetchForecast(this.state.city)
     this.setState({
       city: ''
