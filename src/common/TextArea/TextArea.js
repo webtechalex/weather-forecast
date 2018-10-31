@@ -1,7 +1,12 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import PropTypes from 'prop-types'
 
-const TextArea = ({ value, handleChange, label }) => <label>{label}<textarea type='text' value={value} onChange={handleChange} /></label>
+const TextArea = ({ value, handleChange, label }) => (
+  <Fragment>
+    <label className='block-label'>{label}</label>
+    <textarea type='text' value={value} onChange={handleChange} />
+  </Fragment>
+)
 
 TextArea.propTypes = {
   value: PropTypes.string.isRequired,

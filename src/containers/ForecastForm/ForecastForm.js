@@ -62,16 +62,18 @@ class ForecastForm extends Component {
   }
 
   handleGetCityData = () => {
-    this.props.fetchForecast(this.state.city)
-    this.setState({
-      city: ''
-    })
+    if (this.state.city) {
+      this.props.fetchForecast(this.state.city)
+      this.setState({
+        city: ''
+      })
+    }
   }
 
   render() {
     return (
       <Fragment>
-        <div>
+        <div className='source-select'>
           <p>Choose a data source to display more info:</p>
           <ToggleInput
             options={[ { label: 'CSV', value: 'csv' },{ label: 'City', value: 'city' } ]}
@@ -80,13 +82,13 @@ class ForecastForm extends Component {
           />
         </div>
         {this.state.dataSource === 'city' && <div>
-          <TextInput value={this.state.city} handleChange={this.handleChangeCityData} label='Get weather for a city' />
+          <TextInput value={this.state.city} handleChange={this.handleChangeCityData} label='Get weather for a city:' />
         </div>}
         {this.state.dataSource === 'csv' && <div>
           <TextArea
             value={this.state.csvData}
             handleChange={this.handleChangeCSVData}
-            label='Enter weather data in comma separated format'
+            label='Enter weather data in comma separated format:'
           />
         </div>}
         <div>

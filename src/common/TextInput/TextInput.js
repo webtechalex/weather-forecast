@@ -1,7 +1,12 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import PropTypes from 'prop-types'
 
-const TextInput = ({ value, handleChange, label }) => <label>{label}<input type='text' value={value} onChange={handleChange} /></label>
+const TextInput = ({ value, handleChange, label }) => (
+  <Fragment>
+    <label className='block-label'>{label}</label>
+    <input type='text' value={value} onChange={handleChange} />
+  </Fragment>
+)
 
 TextInput.propTypes = {
   value: PropTypes.string.isRequired,

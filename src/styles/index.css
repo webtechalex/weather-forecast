@@ -2,3 +2,28 @@ html {
   font-family: sans-serif;
   color: #333;
 }
+
+body {
+  margin: 0;
+}
+
+input[type=text], textarea {
+  width: 320px;
+}
+
+textarea {
+  height: 200px;
+}
+
+.container {
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.block-label {
+  display: block;
+}
+
+.source-select {
+  margin-bottom: 10px;
+}

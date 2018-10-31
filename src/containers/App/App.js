@@ -1,12 +1,12 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import ForecastDataContainer from '../ForecastDataContainer/ForecastDataContainer'
 import ForecastForm from '../ForecastForm/ForecastForm'
 
 const App = () => (
-  <Fragment>
+  <div className='container'>
     <ForecastForm />
     <ForecastDataContainer />
-  </Fragment>
+  </div>
 )
 
 export default App
