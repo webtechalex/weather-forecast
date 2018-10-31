@@ -8,7 +8,7 @@ const DataRow = ({ date, forecasts }) => (
     {forecasts.map(({date, temp}) =>
       <td key={date}>
         <p>{`${new Date(date).getHours()}:00`}</p>
-        <p>{`${temp - 273.15}C`}</p>
+        <p>{`${Math.floor((temp - 273.15) * 100) / 100}C`}</p>
       </td>
     )}
   </tr>
