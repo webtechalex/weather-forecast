@@ -1,7 +1,7 @@
-#Weather Forecast
+# Weather Forecast
 A weather forecast application using the [openweathermap API](https://openweathermap.org/)
 
-###Installation
+### Installation
 Node 8.12.0 and NPM 6.4.1 are recommended to run this app.
 
 Clone and run:
@@ -30,7 +30,7 @@ npm run dev
 ```
 and navigate to [http://localhost:8080/](http://localhost:8080/)
 
-###Shortcuts
+### Shortcuts
 In the interests of delivery speed, I have not included much of the configuration I would expect in a commercial project. I would normally include a lint configuration, pre-commit tool and there would likely be a separate production configuration for webpack. I would also include unit tests in the containers and larger components.
 
 In terms of the user experience, there should be some input validation in the text input and textarea fields to give the user more information when they have typed an invalid input. At the moment, the app just prevents the user from submitting an empty form field and there is no validation of the CSV.
